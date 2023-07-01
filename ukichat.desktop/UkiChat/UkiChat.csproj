@@ -7,4 +7,9 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NHibernate" Version="5.4.2" />
+      <PackageReference Include="SQLite" Version="3.13.0" />
+    </ItemGroup>
+
 </Project>
