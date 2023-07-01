@@ -5,10 +5,17 @@
         <TargetFramework>net7.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <AssemblyVersion>2.0.1.0</AssemblyVersion>
+        <FileVersion>2.0.1.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+      <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1823.32" />
       <PackageReference Include="NHibernate" Version="5.4.2" />
+      <PackageReference Include="NHibernate.Extensions.Sqlite" Version="7.0.4" />
       <PackageReference Include="SQLite" Version="3.13.0" />
     </ItemGroup>
 
