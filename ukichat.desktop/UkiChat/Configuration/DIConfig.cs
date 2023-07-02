@@ -15,6 +15,7 @@ public static class DIConfig
     private static IServiceCollection ConfigureServices()
     {
         return new ServiceCollection()
+            .AddSingleton<AppDbContext>()
             .AddByAttribute<ServiceAttribute>();
     }
 }
