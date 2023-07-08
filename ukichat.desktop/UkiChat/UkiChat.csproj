@@ -10,6 +10,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="GenHTTP.Core" Version="7.0.0" />
+      <PackageReference Include="GenHTTP.Modules.StaticWebsites" Version="7.0.0" />
+      <PackageReference Include="GenHTTP.Modules.Webservices" Version="7.0.0" />
       <PackageReference Include="MahApps.Metro" Version="2.4.9" />
       <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
@@ -24,8 +27,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="wwroot\" />
-      <Folder Include="wwwroot\" />
+      <None Update="wwwroot\**">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Resources\**">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

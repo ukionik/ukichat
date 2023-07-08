@@ -8,6 +8,6 @@
                  mc:Ignorable="d"
                  Title="UkiChat v2.0.1a" Height="600" Width="800" TitleCharacterCasing="Normal">
     <Grid>
-        <wpf:WebView2 Source="https://ukistreams.ru"/>
+        <wpf:WebView2 Source="http://localhost:18588"/>
     </Grid>
 </mah:MetroWindow>

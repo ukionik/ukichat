@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using GenHTTP.Modules.Layouting.Provider;
+using GenHTTP.Modules.Webservices;
 using Microsoft.Extensions.DependencyInjection;
+using UkiChat.Core;
 
 namespace UkiChat.Extensions;
 
@@ -23,5 +26,25 @@ public static class ConfigExtensions
             });
 
         return services;
+    }
+    
+    public static LayoutBuilder AddControllers(this LayoutBuilder builder, IServiceProvider diProvider)
+    {
+        var attributeType = typeof(ResourceAttribute);
+        
+        (from type in Assembly.GetTypes()
+                where type.IsDefined(attributeType, false)
+                select type).ToList()
+            .ForEach(resourceType =>
+            {
+                var controllerName = resourceType.Name.Replace("Resource", "").ToKebabCase();
+                var constructorInfo = resourceType.GetConstructors()[0];
+                var instance = Activator.CreateInstance(resourceType, constructorInfo.GetParameters()
+                    .Select(parameterInfo => diProvider.GetService(parameterInfo.ParameterType))
+                    .Cast<object>().ToArray());
+                builder.AddService(controllerName, instance);                
+            });
+
+        return builder;
     }
 }

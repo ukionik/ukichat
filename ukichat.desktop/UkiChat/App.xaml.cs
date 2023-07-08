@@ -1,33 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using GenHTTP.Engine;
+using GenHTTP.Modules.IO;
+using GenHTTP.Modules.Layouting;
+using GenHTTP.Modules.Practices;
+using GenHTTP.Modules.Security;
+using GenHTTP.Modules.StaticWebsites;
 using Microsoft.Extensions.DependencyInjection;
 using UkiChat.Configuration;
+using UkiChat.Extensions;
 using UkiChat.Service;
 
-namespace UkiChat
+namespace UkiChat;
+
+public partial class App
 {
-    public partial class App
+    private readonly ServiceProvider _diProvider;
+
+    public App()
     {
-        private readonly ServiceProvider diProvider;
+        _diProvider = DIConfig.Init();
 
-        public App()
-        {
-            diProvider = DIConfig.Init();
-        }
+        var tree = ResourceTree.FromDirectory("wwwroot/");
 
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            InitApp();            
-        }
+        var resourceTree = ResourceTree.FromDirectory("Resources/");
 
-        private void InitApp()
-        {
-            diProvider.GetService<IAppInitializationService>().Init();
-        }
+        var app = Layout.Create()
+            .Add("resources", GenHTTP.Modules.IO.Resources.From(resourceTree))
+            .AddControllers(_diProvider)
+            .Add(CorsPolicy.Permissive())
+            .Add(StaticWebsite.From(tree));
+
+        Host.Create()
+            .Handler(app)
+            .Defaults()
+            .Port(18588)
+            .Start();
+    }
+
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        InitApp();
+    }
+
+    private void InitApp()
+    {
+        _diProvider.GetService<IAppInitializationService>().Init();
     }
 }
