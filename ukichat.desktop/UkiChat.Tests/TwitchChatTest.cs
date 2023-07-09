@@ -8,13 +8,13 @@ namespace UkiChat.Tests;
 
 public class TwitchChatTest
 {
-    private TwitchClient _client;
+    private TwitchClient? _client;
 
     [SetUp]
     public void Setup()
     {
         _client = new TwitchClient();
-        var credentials = new ConnectionCredentials("ukibot", "");
+        var credentials = new ConnectionCredentials("UkiBot", "");
         var clientOptions = new ClientOptions
         {
             MessagesAllowedInPeriod = 750,
@@ -22,7 +22,7 @@ public class TwitchChatTest
         };
         var customClient = new WebSocketClient(clientOptions);
         _client = new TwitchClient(customClient);
-        _client.Initialize(credentials, "F1ashko");
+        _client.Initialize(credentials, "");
 
         _client.OnLog += Client_OnLog;
         _client.OnJoinedChannel += Client_OnJoinedChannel;
@@ -30,6 +30,7 @@ public class TwitchChatTest
         _client.OnWhisperReceived += Client_OnWhisperReceived;
         _client.OnNewSubscriber += Client_OnNewSubscriber;
         _client.OnConnected += Client_OnConnected;
+        Console.SetOut(TestContext.Progress);
     }
 
     private void Client_OnConnected(object? sender, OnConnectedArgs e)

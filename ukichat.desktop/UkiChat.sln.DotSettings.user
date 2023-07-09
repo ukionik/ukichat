@@ -1,4 +1,15 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34c79688_002D9cf8_002D4e3e_002D828f_002D1db38379a0cf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ConnectTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.ConnectTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.MessageSendTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9782f368_002D4b45_002D49ed_002D8775_002D5d3080cd5e23/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MessageSendTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.MessageSendTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d9ec3c32_002D8dba_002D48cc_002D94fb_002Dad2d4bf16cf3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ConnectTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.ConnectTest&lt;/TestId&gt;&#xD;
@@ -7,5 +18,10 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=df396543_002D323b_002D441c_002D800e_002D37e3d0655001/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.ConnectTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f5301046_002D46ba_002D4dae_002Da6af_002D394a0b721a97/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MessageSendTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::682552ED-52F5-43DF-AA5F-83720722CCDF::net7.0-windows::UkiChat.Tests.TwitchChatTest.MessageSendTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
