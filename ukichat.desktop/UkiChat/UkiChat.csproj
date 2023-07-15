@@ -13,6 +13,7 @@
       <PackageReference Include="GenHTTP.Core" Version="7.0.0" />
       <PackageReference Include="GenHTTP.Modules.StaticWebsites" Version="7.0.0" />
       <PackageReference Include="GenHTTP.Modules.Webservices" Version="7.0.0" />
+      <PackageReference Include="Google.Apis.YouTube.v3" Version="1.61.0.3106" />
       <PackageReference Include="MahApps.Metro" Version="2.4.9" />
       <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
@@ -34,6 +35,11 @@
       <None Update="Resources\**">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="app-config.json" />
+      <EmbeddedResource Include="app-config.json" />
     </ItemGroup>
 
 </Project>

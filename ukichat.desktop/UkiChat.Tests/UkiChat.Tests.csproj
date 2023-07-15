@@ -21,4 +21,10 @@
       <ProjectReference Include="..\UkiChat\UkiChat.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="app-config.test.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

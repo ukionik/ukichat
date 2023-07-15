@@ -3,10 +3,11 @@ using TwitchLib.Client.Events;
 using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
+using UkiChat.Tests.Core;
 
-namespace UkiChat.Tests;
+namespace UkiChat.Tests.Tests.Chat;
 
-public class TwitchChatTest
+public class TwitchChatTest : BaseTest
 {
     private TwitchClient? _client;
 
@@ -14,7 +15,7 @@ public class TwitchChatTest
     public void Setup()
     {
         _client = new TwitchClient();
-        var credentials = new ConnectionCredentials("UkiBot", "");
+        var credentials = new ConnectionCredentials(AppConfig.settings.twitch.userName, AppConfig.settings.twitch.accessToken);
         var clientOptions = new ClientOptions
         {
             MessagesAllowedInPeriod = 750,
@@ -22,7 +23,7 @@ public class TwitchChatTest
         };
         var customClient = new WebSocketClient(clientOptions);
         _client = new TwitchClient(customClient);
-        _client.Initialize(credentials, "");
+        _client.Initialize(credentials, AppConfig.settings.twitch.channel);
 
         _client.OnLog += Client_OnLog;
         _client.OnJoinedChannel += Client_OnJoinedChannel;
@@ -30,7 +31,6 @@ public class TwitchChatTest
         _client.OnWhisperReceived += Client_OnWhisperReceived;
         _client.OnNewSubscriber += Client_OnNewSubscriber;
         _client.OnConnected += Client_OnConnected;
-        Console.SetOut(TestContext.Progress);
     }
 
     private void Client_OnConnected(object? sender, OnConnectedArgs e)
